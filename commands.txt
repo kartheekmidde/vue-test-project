@@ -1,2 +1,5 @@
 To create a new project 
     vue create vue-test-project
+        choose the versions/packages etc
+    cd to project
+    npm run serve

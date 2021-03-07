@@ -1,7 +1,7 @@
 <template>
   <h1>{{ title }}</h1>
   <p>Welcome..</p>
-  <div v-if="showModal">
+  <teleport to=".modals" v-if="showModal">
     <Modal theme="sale" @close="toggleModal">
       <template v-slot:links>
         <a href="#">Sign up</a>
@@ -10,14 +10,14 @@
       <h1>Welcome to my blog</h1>
       <p>Learn VueJS SPA</p>
     </Modal>
-  </div>
-  <div v-if="showModalTwo">
+  </teleport>
+  <teleport to="#modals" v-if="showModalTwo">
     <Modal theme="sales" @close="toggleModalTwo">
       <template v-slot:pwd>
         <a href="#">Forgot Password</a>
       </template>
     </Modal>
-  </div>
+  </teleport>
   <button @click.alt="toggleModal">Open modal (alt)</button>
   <button @click.alt="toggleModalTwo">Open modal 2 (alt)</button>
 </template>
@@ -49,7 +49,9 @@ export default {
 </script>
 
 <style>
-#app {
+#app,
+.modals,
+#modals {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

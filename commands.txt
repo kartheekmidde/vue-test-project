@@ -3,3 +3,4 @@ To create a new project
         choose the versions/packages etc
     cd to project
     npm run serve
+v-slot for named slot

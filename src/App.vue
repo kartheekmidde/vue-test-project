@@ -1,22 +1,22 @@
 <template>
   <h1>{{ title }}</h1>
-  <input type="text" ref="name" />
-  <button @click="handleClick">Click me</button>
+  <Modal :header="header" :text="subText" theme="sale" />
 </template>
 
 <script>
+import Modal from "./components/Modal.vue";
+
 export default {
   name: "App",
+  components: {
+    Modal,
+  },
   data() {
     return {
       title: "My First Vue App",
+      header: "Sign up",
+      subText: "Remember me",
     };
-  },
-  methods: {
-    handleClick() {
-      this.$refs.name.classList.add("active");
-      this.$refs.name.focus();
-    },
   },
 };
 </script>

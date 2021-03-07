@@ -11,7 +11,15 @@
       <p>Learn VueJS SPA</p>
     </Modal>
   </div>
+  <div v-if="showModalTwo">
+    <Modal theme="sales" @close="toggleModalTwo">
+      <template v-slot:pwd>
+        <a href="#">Forgot Password</a>
+      </template>
+    </Modal>
+  </div>
   <button @click.alt="toggleModal">Open modal (alt)</button>
+  <button @click.alt="toggleModalTwo">Open modal 2 (alt)</button>
 </template>
 
 <script>
@@ -25,14 +33,16 @@ export default {
   data() {
     return {
       title: "My First Vue App",
-      header: "Sign up",
-      subText: "Remember me",
       showModal: false,
+      showModalTwo: false,
     };
   },
   methods: {
     toggleModal() {
       this.showModal = !this.showModal;
+    },
+    toggleModalTwo() {
+      this.showModalTwo = !this.showModalTwo;
     },
   },
 };
